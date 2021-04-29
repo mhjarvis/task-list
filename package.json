@@ -1,0 +1,23 @@
+{
+  "name": "task-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhjarvis/task-list.git"
+  },
+  "author": "mhjarvis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhjarvis/task-list/issues"
+  },
+  "homepage": "https://github.com/mhjarvis/task-list#readme",
+  "devDependencies": {
+    "webpack": "^5.36.1",
+    "webpack-cli": "^4.6.0"
+  }
+}
