@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,13 +52,25 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: 'Freckle Face', cursive;
 }
 
+/********** Header Layout **********/
+
 header {
+    display: flex;
     height: 10%;
     background-color: #00a8c6;
     font-size: 3vw;
     color: #f9f2e7;
+}
+
+.page-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2vw;
+    font-size: 4.5vh;
 }
 
 .container {
@@ -65,12 +79,18 @@ header {
     background-color: black;
 }
 
+/********** Side Panel **********/
+
+
 .side {
     left: 0;
     width: 20%;
     background-color: #8fbe00;
     color: black;
 }
+
+/********** Note Section **********/
+
 
 .main {
     height: 100%;
