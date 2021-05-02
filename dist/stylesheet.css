@@ -70,7 +70,7 @@ header {
     flex-direction: column;
     justify-content: center;
     margin-left: 2vw;
-    font-size: 4.5vh;
+    font-size: 5.5vh;
 }
 
 .container {
@@ -81,16 +81,41 @@ header {
 
 /********** Side Panel **********/
 
-
 .side {
+    position: relative;
+    text-align: center;
     left: 0;
     width: 20%;
     background-color: #8fbe00;
     color: black;
 }
 
-/********** Note Section **********/
+h3 {
+    font-size: 2rem;
+    margin-top: .5rem;
+}
 
+#new-project-button {
+    position: absolute;
+    background-color: #8fbe00;
+    right: .3rem;
+    top: .3rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem;
+}
+
+#new-project-button:hover {
+    background-color: #aee239;
+}
+
+.project-container {
+    width: 100%;
+    height: 100%;
+    margin-top: .5rem;
+}
+
+/********** Note Section **********/
 
 .main {
     height: 100%;
@@ -98,3 +123,4 @@ header {
     background-color: #f9f2e7;
     color: #40c0cb;
 }
+
