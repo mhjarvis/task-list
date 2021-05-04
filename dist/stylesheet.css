@@ -82,10 +82,10 @@ header {
 /********** Side Panel **********/
 
 .side {
+    flex: 25%;
     position: relative;
     text-align: center;
     left: 0;
-    width: 20%;
     background-color: #8fbe00;
     color: black;
 }
@@ -93,6 +93,8 @@ header {
 h3 {
     font-size: 2rem;
     margin-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: solid black;
 }
 
 #new-project-button {
@@ -109,17 +111,47 @@ h3 {
     background-color: #aee239;
 }
 
+.project-titles {
+    position: relative;
+    width: 90%;
+    background-color: #8fbe00;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    color: #f9f2e7;
+    font-family: 'Freckle Face', cursive;
+}
+
+.project-titles:hover {
+    color: rgb(145, 141, 141);
+}
+
 .project-container {
     width: 100%;
     height: 100%;
     margin-top: .5rem;
 }
 
+.delete-project-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .5rem;
+    font-size: 1rem;
+    background-color: #8fbe00;
+    border: none;
+    
+}
+
+.delete-project-button:hover {
+    color: #f9f2e7;
+}
+
 /********** Note Section **********/
 
 .main {
+    flex: 75%;
     height: 100%;
-    width: 80%;
     background-color: #f9f2e7;
     color: #40c0cb;
 }
