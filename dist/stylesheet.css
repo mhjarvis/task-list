@@ -120,6 +120,7 @@ h3 {
     border: none;
     color: #f9f2e7;
     font-family: 'Freckle Face', cursive;
+    z-index: 0;
 }
 
 .project-titles:hover {
@@ -136,11 +137,11 @@ h3 {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: .5rem;
+    right: 0;
     font-size: 1rem;
-    background-color: #8fbe00;
+    background-color:#8fbe00;
     border: none;
-    
+    z-index: 1;
 }
 
 .delete-project-button:hover {
@@ -149,7 +150,7 @@ h3 {
 
 /********** Note Section **********/
 
-.main {
+#main {
     flex: 75%;
     height: 100%;
     background-color: #f9f2e7;

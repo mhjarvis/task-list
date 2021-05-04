@@ -10,13 +10,16 @@ class MyProjects {
 }
 
 /* Testing use only - delete */
-let test1 = new MyProjects("Shopping List", ["Takek out the Trash"]);
+let test1 = new MyProjects("Shopping List", ["Takek out the Trash", "Wash Dishes"]);
 let test2 = new MyProjects("Homework", ["Math", "Spelling"]);
 let test3 = new MyProjects("WorkOut", ["Biceps", "Triceps"]);
 
 projects.push(test1);
 projects.push(test2);
 projects.push(test3);
+
+/* Set intiital project */
+let currentProject = projects[0];
 
 /* Display individual projects in the side-bar */
 function displayProjects() {
@@ -48,7 +51,31 @@ function displayProjects() {
             deleteProject(projectName);
         });
     }
-}
+};
+
+function displayTasks() {
+
+        let currentProjectTasks = currentProject.tasks;
+        let tasksLength = currentProjectTasks.length;
+
+        for(let i = 0; i < tasksLength; i++) {
+            const main = document.getElementById('main');
+
+            /* Create div for each task */
+            const div = document.createElement('div');
+            let title = currentProjectTasks[i];
+            div.innerHTML = title;
+            
+        }
+
+
+
+
+
+    console.log(tasksLength);
+
+
+};
 
 /* Delete individual projects */
 function deleteProject(title) {
@@ -68,6 +95,18 @@ function rebuild() {
 
 function test() {
     displayProjects();
+    displayTasks();
 }
+
+
+
+
+
+
+
+
+
+
+
 
 export { test }
