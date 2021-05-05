@@ -157,3 +157,24 @@ h3 {
     color: #40c0cb;
 }
 
+.task-box {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: #40c0cb;
+    color: black;
+    border: 1px black solid;
+    border-radius: 1rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.task-box:hover {
+    background-color: #63d6e0;
+}
+
+.tasks {
+    margin-left: 1rem;
+    font-size: 1rem;
+}

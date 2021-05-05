@@ -41,41 +41,66 @@ function displayProjects() {
         const deleteButton = document.createElement('button');
         let deleteButtonName = projectName + "-delete";
         deleteButton.className = "delete-project-button";
-        deleteButton.id = projectName;
+        deleteButton.id = projectName + "delete";
         deleteButton.innerHTML = "x";
         getProjectID.appendChild(deleteButton);
 
         /* Add event listner to delete project */
-        document.getElementById(projectName).addEventListener("click",
+        document.getElementById(projectName + "delete").addEventListener("click",
         function() {
             deleteProject(projectName);
         });
-    }
+
+        document.getElementById(projectName).addEventListener("click",
+        function() {
+            selectDiffProject(projects[i]);
+        })
+    };
 };
+
+function selectDiffProject(selectThisProject) {
+
+    /* Clear out the main div */
+    let getMainSection = document.getElementById('main');
+    getMainSection.innerHTML = "";
+
+    /* Set global variable to current project */
+    currentProject = selectThisProject;
+
+    /* Display tasks for new project */
+    displayTasks();
+}
 
 function displayTasks() {
 
-        let currentProjectTasks = currentProject.tasks;
-        let tasksLength = currentProjectTasks.length;
+    let projectName = currentProject.title;
+    let currentProjectTasks = currentProject.tasks;
 
-        for(let i = 0; i < tasksLength; i++) {
-            const main = document.getElementById('main');
+    for(let i = 0; i < currentProjectTasks.length; i++) {
 
-            /* Create div for each task */
-            const div = document.createElement('div');
-            let title = currentProjectTasks[i];
-            div.innerHTML = title;
-            
-        }
+        createTaskDiv(projectName, currentProjectTasks[i]);
 
+        const taskDiv = document.getElementById(projectName + "-" + currentProjectTasks[i]);
 
-
-
-
-    console.log(tasksLength);
-
-
+        /* Create div for each task */
+        const div = document.createElement('div');
+        let title = currentProjectTasks[i];
+        div.className = "tasks";
+        div.innerHTML = title;
+        taskDiv.appendChild(div);
+    };
 };
+
+function createTaskDiv(name, task) {
+
+    const main = document.getElementById('main');
+
+    /* Create div for each task */
+    const div = document.createElement('div');
+    div.className = "task-box";
+    div.id = name + "-" + task; 
+    main.appendChild(div);
+}
 
 /* Delete individual projects */
 function deleteProject(title) {
