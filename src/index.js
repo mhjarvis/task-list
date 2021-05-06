@@ -1,4 +1,6 @@
-import { test } from './projects'
+import { initializeProjects } from './projects'
 
-test();
+/* Build out the iniital application */
+
+initializeProjects();
 
