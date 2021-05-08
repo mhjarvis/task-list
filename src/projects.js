@@ -7,7 +7,6 @@ class MyProjects {
         this.title = title;
         this.tasks = tasks;
     }
-
 }
 
 /* Testing use only - delete */
@@ -57,20 +56,22 @@ function displayProjects() {
     displayTasks();                                 // display tasks for the active project
 };
 
+
 /***************************************************************************************************
  *                                      Main Task List Functions                                   *
 ****************************************************************************************************/
 
+/* Function to display all tasks for the applicable project */
 function displayTasks() {
-    console.log("test");
-    console.log(projects.length);
 
-    if((projects.length) == 0) {
-        console.log("length is 0");
-        return;
+    if((projects.length) == 0) {    
+        alert("Projects array is empty, please create a new project");  // testfor empty array causing
+        return;                                                         // undefined issues exit loop
     }
 
-    for(let i = 0; i < projects[currentProject].tasks.length; i++) {
+    let taskLength = projects[currentProject].tasks.length;
+
+    for(let i = 0; i < taskLength; i++) {
         console.log(projects[currentProject].tasks[i]);
     };
 };

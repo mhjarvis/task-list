@@ -46,6 +46,15 @@ table {
 
 /********** Main Page Layout **********/
 
+:root {
+    --light-blue: #00a8c6;
+    --lighter-blue: #40c0cb;
+    --highlight-blue: #63d6e0;
+    --light-green: #8fbe00;
+    --highlight-green: #aee239;
+    --off-white: #f9f2e7;
+}
+
 html, body {
     display: flex;
     flex-direction: column;
@@ -60,9 +69,9 @@ html, body {
 header {
     display: flex;
     height: 10%;
-    background-color: #00a8c6;
+    background-color: var(--light-blue);
     font-size: 3vw;
-    color: #f9f2e7;
+    color: var(--off-white);
 }
 
 .page-title {
@@ -86,7 +95,7 @@ header {
     text-align: center;
     left: 0;
     width: 25%;
-    background-color: #8fbe00;
+    background-color: var(--light-green);
     color: black;
 }
 
@@ -99,7 +108,7 @@ h3 {
 
 #new-project-button {
     position: absolute;
-    background-color: #8fbe00;
+    background-color: var(--light-green);
     right: .3rem;
     top: .3rem;
     border-radius: 50%;
@@ -109,17 +118,17 @@ h3 {
 }
 
 #new-project-button:hover {
-    background-color: #aee239;
+    background-color: var(--highlight-green);
 }
 
 .project-buttons {
     position: relative;
     width: 90%;
-    background-color: #8fbe00;
+    background-color: var(--light-green);
     margin-top: 1rem;
     font-size: 1.5rem;
     border: none;
-    color: #f9f2e7;
+    color: var(--off-white);
     font-family: 'Freckle Face', cursive;
     z-index: 0;
 }
@@ -141,13 +150,13 @@ h3 {
     right: 0;
     font-size: 1.4rem;
     font-family: inherit;
-    background-color:#8fbe00;
+    background-color: var(--light-green);
     border: none;
     z-index: 1;
 }
 
 .delete-project-button:hover {
-    color: #f9f2e7;
+    color: var(--off-white);
 }
 
 /********** Note Section **********/
@@ -155,8 +164,8 @@ h3 {
 #main {
     flex: 75%;
     height: 100%;
-    background-color: #f9f2e7;
-    color: #40c0cb;
+    background-color: var(--off-white);
+    color: var(--lighter-blue);
 }
 
 .task-container {
@@ -164,7 +173,7 @@ h3 {
     display: flex;
     flex-flow: row;
     align-items: center;
-    background-color: #40c0cb;
+    background-color: var(--lighter-blue);
     color: black;
     border: 1px black solid;
     border-radius: 1rem;
@@ -173,7 +182,7 @@ h3 {
 }
 
 .task-container:hover {
-    background-color: #63d6e0;
+    background-color: var(--highlight-blue);
 }
 
 .tasks {
