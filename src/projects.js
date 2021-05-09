@@ -10,13 +10,14 @@ class MyProjects {
 }
 
 /* Testing use only - delete */
-let test1 = new MyProjects("Shopping List", ["Takek out the Trash", "Wash Dishes", "Eat", "Sleep", "Drink Something"]);
+let test1 = new MyProjects();
 let test2 = new MyProjects("Homework", ["Math", "Spelling"]);
 let test3 = new MyProjects("WorkOut", ["Biceps", "Triceps"]);
 
 projects.push(test1);
 projects.push(test2);
 projects.push(test3);
+
 
 /***************************************************************************************************
  *                                  Side-panel / Project functions                                 *
@@ -83,12 +84,16 @@ function deleteThisProject(i) {
     displayProjects();
 };
 
+function addTaskToProject(task) {
+    projects[currentProject].tasks.push(task);
+}
+
 
 function initializeProjects() {
     displayProjects();
 };
 
-export { initializeProjects }
+export { displayProjects, initializeProjects, addTaskToProject }
 
 
 
