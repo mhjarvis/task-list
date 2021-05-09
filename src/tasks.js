@@ -17,6 +17,8 @@ function createTaskAndPush(title, description, dueDate, priority) {
     displayProjects();
 }
 
+/* Function that displays all tasks from current project */
+
 
 
 /* Testing only; delete before deploy */

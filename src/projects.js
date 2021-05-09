@@ -10,7 +10,7 @@ class MyProjects {
 }
 
 /* Testing use only - delete */
-let test1 = new MyProjects();
+let test1 = new MyProjects("Chores");
 let test2 = new MyProjects("Homework", ["Math", "Spelling"]);
 let test3 = new MyProjects("WorkOut", ["Biceps", "Triceps"]);
 
@@ -23,11 +23,13 @@ projects.push(test3);
  *                                  Side-panel / Project functions                                 *
 ****************************************************************************************************/
 
-/* Set intiital project */
+/* Set intiital projecte selection */
 let currentProject = 0;
 
 /* Display individual projects in the side-bar */
 function displayProjects() {
+
+    clearProjectDiv();
 
     for(let i = 0; i < projects.length; i++) {
 
@@ -76,7 +78,13 @@ function displayTasks() {
         console.log(projects[currentProject].tasks[i]);
     };
 };
+/* Function that clears out the project div (which displays all projects) */
+function clearProjectDiv() {
+    let projectDiv = document.getElementById('project-container');
+    projectDiv.innerHTML = "";
+}
 
+/* Function delete a project from the projects array */
 function deleteThisProject(i) {
     projects.splice(i, 1);
     let t = document.getElementById('project-container');
@@ -84,11 +92,12 @@ function deleteThisProject(i) {
     displayProjects();
 };
 
+/* Function pushes new project to the projects array */
 function addTaskToProject(task) {
     projects[currentProject].tasks.push(task);
 }
 
-
+/* Function to initialize the page */
 function initializeProjects() {
     displayProjects();
 };
