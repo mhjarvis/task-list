@@ -159,7 +159,7 @@ h3 {
     color: var(--off-white);
 }
 
-/********** Note Section **********/
+/********** Task Section **********/
 
 #main {
     flex: 75%;
@@ -185,10 +185,29 @@ h3 {
     background-color: var(--highlight-blue);
 }
 
-.tasks {
-    margin-left: 1rem;
-    font-size: 1rem;
+.task-titles {
+    margin: 1rem;
+    width: 8rem;
 }
+
+.task-description {
+    margin: 1rem;
+    width: 12rem;
+}
+
+.task-due-date {
+    position: absolute;
+    margin-right: 4rem;
+    right: 0;
+}
+
+.task-priority {
+    position: absolute;
+    margin: 1rem;
+    right: 0;
+}
+
+
 
 .delete-task-button {
     position: absolute;

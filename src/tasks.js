@@ -24,6 +24,8 @@ function createTaskAndPush(title, description, dueDate, priority) {
 /* Testing only; delete before deploy */
 function testing() {
     createTaskAndPush("POOOOOOOOOOOP", "Poop a lot", "soon", "low");
+    createTaskAndPush("Make Breakfast", "Make some good food", "today", "low");
+    createTaskAndPush("2nd Poop", "Poop a lot", "soon", "low");
 }
 
 export { testing }

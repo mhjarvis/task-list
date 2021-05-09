@@ -10,13 +10,10 @@ class MyProjects {
 }
 
 /* Testing use only - delete */
-let test1 = new MyProjects("Chores");
-let test2 = new MyProjects("Homework", ["Math", "Spelling"]);
-let test3 = new MyProjects("WorkOut", ["Biceps", "Triceps"]);
 
-projects.push(test1);
-projects.push(test2);
-projects.push(test3);
+createNewProject("Chores");
+createNewProject("Homework");
+createNewProject("Workout");
 
 
 /***************************************************************************************************
@@ -56,55 +53,42 @@ function displayProjects() {
                 deleteThisProject(i);
             });
     }   
+    console.log(projects);
     displayTasks();                                 // display tasks for the active project
 };
 
+function createNewProject(title) {
+    let newProject = new MyProjects(title);
+    projects.push(newProject);
+}
+
 /* Function delete a project from the projects array */
 function deleteThisProject(i) {
+
+    let index;
+
     projects.splice(i, 1);
     clearThisDiv("project-container");
-    displayProjects();
+    clearThisDiv("main");
+
+    /* logic to display previous project in project list */
+    if(currentProject == 0 || currentProject == 1) {
+        index = 0;
+    } else {
+        index = currentProject - 1;
+    }
+
+    updateCurrentProject(index);        // set new project index to display
+    displayProjects();                  // rebuild project/tasks
 };
 
+function updateCurrentProject(index) {
+    currentProject = index;
+}
 
 /***************************************************************************************************
  *                                      Main Task List Functions                                   *
 ****************************************************************************************************/
-
-//     let projectName = projects[currentProject].title;
-//     let currentProjectTasks = projects[currentProject].tasks;
-
-//     for(let i = 0; i < currentProjectTasks.length; i++) {
-
-//         createDivForTaskElements(projectName, currentProjectTasks[i]);
-
-//         const taskDiv = document.getElementById(projectName + "-" + currentProjectTasks[i]);
-
-//         /* Create paragraph for each task */
-//         const div = document.createElement('div');
-//         let title = currentProjectTasks[i];
-//         div.className = "tasks";
-//         div.innerHTML = title;
-//         taskDiv.appendChild(div);
-
-//         /* Create delete button for each task */
-//         const getTaskContainer = document.getElementById(projectName + "-" + currentProjectTasks[i]);
-//         const deleteTaskButton = document.createElement('button');
-//         deleteTaskButton.className = "delete-task-button";
-//         deleteTaskButton.id = projectName + "TaskID" + i;
-//         deleteTaskButton.innerHTML = "x";
-//         getTaskContainer.appendChild(deleteTaskButton);
-
-//         /* Event listener for task delete button */
-//         document.getElementById(projectName + "TaskID" + i).addEventListener("click",
-//         function() {
-//             deleteTask(currentProject, i);
-//         })
-//     };
-// };
-
-
-
 
 /* Function to display all tasks for the applicable project */
 function displayTasks() {
@@ -120,14 +104,18 @@ function displayTasks() {
 
     for(let i = 0; i < taskLength; i++) {
 
+
         createDivContainer(i);
 
         let taskTitle = projects[currentProject].tasks[i].title;
         let taskDescription = projects[currentProject].tasks[i].description;
         let taskDueDate = projects[currentProject].tasks[i].dueDate;
-        let taskpriority = projects[currentProject].tasks[i].priority;
+        let taskPriority = projects[currentProject].tasks[i].priority;
 
-        addParagraphElement(taskTitle, i, "task-titles", "task-titles-id-");
+        addParagraphElement(taskTitle, i, "task-titles", "task-titles-id-");                    // add task title
+        addParagraphElement(taskDescription, i, "task-description", "task-description-id-");    //add task description
+        addParagraphElement(taskDueDate, i, "task-due-date", "task-due-date-id-");              //add task due date
+        addParagraphElement(taskPriority, i, "task-priority", "task-priority-id-");            //add task priority
     };
 };
 
